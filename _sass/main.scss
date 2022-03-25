@@ -15,7 +15,7 @@
 }
 
 .header {
-  height: 100vh;
+  height: 100%;
   background-image: url(../_assets/images/background.png);
   background-size: cover;
   background-position: top;
@@ -43,8 +43,7 @@
     }
 
     @include for-tablet {
-      padding-right: 60px;
-      width: 500px;
+      width: 400px;
     }
 
     @include for-desktop {
@@ -135,14 +134,15 @@
     background-color: $cherry-red;
 
     @include for-phone {
-      width: 200px;
+      width: 100%;
     }
 
     @include for-tablet {
-      width: 400px;
+      width: 300px;
     }
 
     @include for-widescreen {
+      width: 700px;
     }
 
     @include for-fullhd {
@@ -156,26 +156,232 @@
     padding: 15px;
     font-family: $family-primary;
     text-align: center;
+    font-weight: medium;
 
     @include for-phone {
-      width: 200px;
+      width: 100%;
       font-size: 12px;
+      margin: 25px 0;
     }
 
     @include for-tablet {
       width: 400px;
       font-size: 16px;
+      margin: 25px 0;
     }
 
     @include for-widescreen {
       width: 800px;
       font-size: 20px;
+      margin: 35px 0;
     }
 
     @include for-fullhd {
       width: 1000px;
       font-size: 30px;
-      margin-top: 40px;
+      margin: 40px 0;
+    }
+  }
+}
+
+.logo-fixed {
+  position: fixed;
+  z-index: 7;
+  top: 189px;
+  left: 10px;
+  height: 100%;
+
+  @include for-phone {
+    height: 52%;
+    left: 5px;
+  }
+
+  @include for-tablet {
+    height: 66%;
+  }
+
+  @include for-fullhd {
+    height: 75%;
+  }
+}
+
+.links {
+  &__wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px 5px;
+    grid-template-areas:
+      ". moda ."
+      "beauty  . hrana"
+      ". sport  tech"
+      ". putovanja ."
+      "tretmani  . ."
+      "shopping . ."
+      ". zdravlje  .";
+
+    max-width: 900px;
+    @include for-phone {
+      width: 200px;
+      padding-left: 20px;
+      margin-bottom: 25px;
+    }
+
+    @include for-tablet {
+      width: 400px;
+      margin-bottom: 25px;
+    }
+
+    @include for-desktop {
+      width: 600px;
+    }
+
+    @include for-widescreen {
+      width: 700px;
+      margin-bottom: 35px;
+    }
+
+    @include for-fullhd {
+      width: 900px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__style {
+    color: $cherry-red;
+    font-family: $family-secondary;
+    @include for-phone {
+      font-size: 12px;
+    }
+
+    @include for-tablet {
+      font-size: 20px;
+    }
+
+    @include for-widescreen {
+      font-size: 50px;
+    }
+
+    @include for-fullhd {
+      font-size: 80px;
+    }
+  }
+
+  &__style--moda {
+    grid-area: moda;
+  }
+  &__style--beauty {
+    grid-area: beauty;
+  }
+  &__style--hrana {
+    grid-area: hrana;
+  }
+  &__style--sport {
+    grid-area: sport;
+  }
+  &__style--tech {
+    grid-area: tech;
+  }
+  &__style--putovanja {
+    grid-area: putovanja;
+  }
+  &__style--tretmani {
+    grid-area: tretmani;
+  }
+  &__style--shopping {
+    grid-area: shopping;
+  }
+  &__style--zdravlje {
+    grid-area: zdravlje;
+  }
+}
+
+.form {
+  &__wrapper {
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+
+  &__text-box {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include for-phone {
+      width: 200px;
+      padding-left: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    @include for-tablet {
+      width: 400px;
+    }
+
+    @include for-desktop {
+      width: 600px;
+    }
+
+    @include for-widescreen {
+      width: 700px;
+    }
+
+    @include for-fullhd {
+      width: 1000px;
+      gap: 50px;
+    }
+  }
+
+  &__title {
+    color: $brownish-grey;
+    font-weight: bold;
+
+    @include for-phone {
+      font-size: 25px;
+    }
+
+    @include for-tablet {
+      font-size: 25px;
+      line-height: 46px;
+      padding-top: 50px;
+    }
+
+    @include for-widescreen {
+      font-size: 80px;
+      line-height: 86px;
+      padding-top: 100px;
+    }
+
+    @include for-fullhd {
+      font-size: 173px;
+      line-height: 120px;
+      padding-top: 170px;
+    }
+  }
+
+  &__text {
+    color: black;
+
+    @include for-phone {
+      font-size: 14px;
+      line-height: 25px;
+    }
+
+    @include for-tablet {
+      font-size: 14px;
+      line-height: 25px;
+      padding-top: 20px;
+    }
+
+    @include for-widescreen {
+      font-size: 16px;
+      line-height: 30px;
+      padding-top: 80px;
+    }
+
+    @include for-fullhd {
+      font-size: 20px;
+      line-height: 40px;
+      padding-top: 120px;
     }
   }
 }
