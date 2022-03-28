@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Neki naslov</title>
-    <meta name="title" content="ADIDAS FORUM" />
+    <title>Wall of Desire - Story slavi 20. rođendan</title>
+    <meta name="title" content="Wall of Desire - Story 20. rođendan" />
     <meta
       name="description"
-      content="Adidas Originals savršena obuća u svim godišnjim dobima i dijelovima dana i noći"
+      content="Story slavi 20. rođendan i ostvaruje hrpu želja!"
     />
-    <link rel="stylesheet" href="css/main.css?v=1" />
+    <link rel="stylesheet" href="css/main.css?v=2" />
 
     <!-- Facebook -->
     <meta property="og:url" content="https://native.story.hr/preview/adidas/" />
@@ -18,7 +18,7 @@
     <meta property="og:title" content="Adidas Forum" />
     <meta
       property="og:description"
-      content="Uz adidas Forum tenisice slavimo dobar stil, optimizam i best friends atmosferu"
+      content="Story slavi 20. rođendan i ostvaruje hrpu želja!"
     />
     <meta
       property="og:image"
@@ -104,8 +104,15 @@
       <section>
         <div class="container links">
           <div class="links__wrapper">
-            <a class="links__style links__style--moda" href="#">moda</a>
-            <a class="links__style links__style--beauty" href="#">beauty</a>
+            <button
+              class="links__style links__style--moda button_active"
+              href="#"
+            >
+              moda
+            </button>
+            <button class="links__style links__style--beauty" href="#">
+              beauty
+            </button>
             <a class="links__style links__style--hrana" href="#">hrana</a>
             <a class="links__style links__style--sport" href="#">sport</a>
             <a class="links__style links__style--tech" href="#">tehnologija</a>
@@ -119,7 +126,8 @@
         </div>
       </section>
 
-      <div class="form form__wrapper">
+      <!-- MODA -->
+      <div class="form form__wrapper content_inside content_inside_active">
         <form action="">
           <div class="form__text-box">
             <h2 class="form__title">MODA</h2>
@@ -130,19 +138,629 @@
               modnu želju!
             </p>
           </div>
-          <div class="form__text-box">
+
+          <div class="form__text-box--white">
             <div>
-              <input type="text" />
-              <p>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form__email"
+                placeholder="Upiši svoj e-mail"
+              />
+              <div class="form__checkbox-wrapper">
+                <div class="form__checkbox">
+                  <label for="pravila_moda1" id="pravila_moda1">
+                    <input
+                      type="checkbox"
+                      id="pravila"
+                      name="pravila"
+                      value="prihvacam"
+                      class="form__text--white form__text--white-checkbox"
+                    />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <p class="form__text form__text--white">
+                  Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                  kao takve prihvaćam.
+                  <br />
+                  Prijavom prihvaćaš
+                  <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                  <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+                </p>
+              </div>
+              <div class="form__text--white">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+            <div>
+              <textarea
+                name="moda_zelja"
+                id="moda_zelja"
+                cols="30"
+                rows="20"
+                placeholder="Opiši koju želju si zaželio/la i zašto (do 200 znakova):"
+              ></textarea>
+
+              <div class="form__checkbox-wrapper2">
+                <div class="form__checkbox">
+                  <label for="pravila_moda1" id="pravila_moda1">
+                    <input
+                      type="checkbox"
+                      id="pravila"
+                      name="pravila"
+                      value="prihvacam"
+                      class="form__text--white form__text--white-checkbox"
+                    />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <p class="form__text form__text--white2">
+                  Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                  kao takve prihvaćam.
+                  <br />
+                  Prijavom prihvaćaš
+                  <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                  <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+                </p>
+              </div>
+
+              <div class="form__text--white2">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- BEAUTY -->
+      <div class="form form__wrapper content_inside">
+        <form action="">
+          <div class="form__text-box">
+            <h2 class="form__title">BEAUTY</h2>
+            <p class="form__text">
+              Tvoja kupaonica, tvoja je beauty oaza u kojoj uvijek ima mjesta za
+              beauty novitete. Ako su tvoja želja kremice, šminka, šamponi,
+              kozmetički pribor, parfemi… samo nam napiši.
+            </p>
+          </div>
+
+          <div class="form__text-box--white">
+            <div>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form__email"
+                placeholder="Upiši svoj e-mail"
+              />
+              <div class="form__checkbox">
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white"
+                />
+                <label for="pravila_beauty" id="pravila_beauty"></label>
+              </div>
+              <p class="form__text form__text--white">
                 Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
                 kao takve prihvaćam.
               </p>
-              <p>
-                Prijavom prihvaćaš pravila i privatnosti AMZ-a i pravila
-                kreativnog natječaja.
+              <p class="form__text form__text--white">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
               </p>
+              <div class="form__text--white">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
             </div>
-            <div><textarea name="" id="" cols="30" rows="10"></textarea></div>
+            <div>
+              <textarea
+                name="beauty_zelja"
+                id="beauty_zelja"
+                cols="30"
+                rows="20"
+                placeholder="Opiši koju želju si zaželio/la i zašto (do 200 znakova):"
+              ></textarea>
+              <div>
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white2"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white2">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white2">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+
+              <div class="form__text--white2">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- HRANA -->
+      <div class="form form__wrapper content_inside">
+        <form action="">
+          <div class="form__text-box">
+            <h2 class="form__title">HRANA</h2>
+            <p class="form__text">
+              Tjedna košarica, odlazak na večeru, druženje sa chefom,
+              nutricionistički plan prehrane, vrhunsko gastro iskustvo... samo
+              su dio food iznenađenja koja te očekuju na našem zidu želja.
+            </p>
+          </div>
+
+          <div class="form__text-box--white">
+            <div>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form__email"
+                placeholder="Upiši svoj e-mail"
+              />
+              <div class="form__checkbox">
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+              <div class="form__text--white">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+            <div>
+              <textarea
+                name="hrana_zelja"
+                id="hrana_zelja"
+                cols="30"
+                rows="20"
+                placeholder="Opiši koju želju si zaželio/la i zašto (do 200 znakova):"
+              ></textarea>
+              <div>
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white2"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white2">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white2">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+
+              <div class="form__text--white2">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- TEHNOLOGIJA -->
+      <div class="form form__wrapper content_inside">
+        <form action="">
+          <div class="form__text-box">
+            <h2 class="form__title">TECH</h2>
+            <p class="form__text">
+              Tvoj predmet želja je novi pametni telefon, laptop, tablet,
+              električni bicikl ili neka sasvim druga tehno novotarija. Veselimo
+              se tvojim tehno željama!
+            </p>
+          </div>
+
+          <div class="form__text-box--white">
+            <div>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form__email"
+                placeholder="Upiši svoj e-mail"
+              />
+              <div class="form__checkbox">
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+              <div class="form__text--white">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+            <div>
+              <textarea
+                name="tech_zelja"
+                id="tech_zelja"
+                cols="30"
+                rows="20"
+                placeholder="Opiši koju želju si zaželio/la i zašto (do 200 znakova):"
+              ></textarea>
+              <div>
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white2"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white2">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white2">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+
+              <div class="form__text--white2">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- TRETMANI -->
+      <div class="form form__wrapper content_inside">
+        <form action="">
+          <div class="form__text-box">
+            <h2 class="form__title">TRETMANI</h2>
+            <p class="form__text">
+              Maštaš o tome da osvježiš lice, tijelo ili kosu i učiniš napokon
+              nešto za sebe. Sada je pravo vrijeme da uz Story zid želja
+              zablistaš do ljeta.
+            </p>
+          </div>
+
+          <div class="form__text-box--white">
+            <div>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form__email"
+                placeholder="Upiši svoj e-mail"
+              />
+              <div class="form__checkbox">
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+              <div class="form__text--white">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+            <div>
+              <textarea
+                name="tretmani_zelja"
+                id="tretmani_zelja"
+                cols="30"
+                rows="20"
+                placeholder="Opiši koju želju si zaželio/la i zašto (do 200 znakova):"
+              ></textarea>
+              <div>
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white2"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white2">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white2">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+
+              <div class="form__text--white2">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- SHOPPING -->
+      <div class="form form__wrapper content_inside">
+        <form action="">
+          <div class="form__text-box">
+            <h2 class="form__title">SHOPPING</h2>
+            <p class="form__text">
+              Malo koga neće razveseliti mogućnost da uz poklon bon kupuje u
+              omiljenoj trgovini sva što poželi. Da, i to je želja koju ćemo
+              ispuniti, a možda pripremiti i još poneko super iznenađenje.
+              Napiši nam gdje i što bi šopingirao/la baš ovako.
+            </p>
+          </div>
+
+          <div class="form__text-box--white">
+            <div>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form__email"
+                placeholder="Upiši svoj e-mail"
+              />
+              <div class="form__checkbox">
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+              <div class="form__text--white">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+            <div>
+              <textarea
+                name="shopping_zelja"
+                id="shopping_zelja"
+                cols="30"
+                rows="20"
+                placeholder="Opiši koju želju si zaželio/la i zašto (do 200 znakova):"
+              ></textarea>
+              <div>
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white2"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white2">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white2">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+
+              <div class="form__text--white2">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- ZDRAVLJE -->
+      <div class="form form__wrapper content_inside">
+        <form action="">
+          <div class="form__text-box">
+            <h2 class="form__title">ZDRAVLJE</h2>
+            <p class="form__text">
+              Svima nam je zasigurno zdravlje među najvažnijim pitanjima, a mi
+              tebe pitamo koju želju želiš da ti ostvarimo kad razmišljaš o
+              zdravlju.
+            </p>
+          </div>
+
+          <div class="form__text-box--white">
+            <div>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form__email"
+                placeholder="Upiši svoj e-mail"
+              />
+              <div class="form__checkbox">
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+              <div class="form__text--white">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
+            <div>
+              <textarea
+                name="zdravlje_zelja"
+                id="zdravlje_zelja"
+                cols="30"
+                rows="20"
+                placeholder="Opiši koju želju si zaželio/la i zašto (do 200 znakova):"
+              ></textarea>
+              <div>
+                <input
+                  type="checkbox"
+                  id="pravila"
+                  name="pravila"
+                  value="prihvacam"
+                  class="form__text--white2"
+                />
+                <label for="pravila" id="pravila"></label>
+              </div>
+              <p class="form__text form__text--white2">
+                Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
+                kao takve prihvaćam.
+              </p>
+              <p class="form__text form__text--white2">
+                Prijavom prihvaćaš
+                <a href="#" target="_blank">pravila privatnosti AMZ-a</a> i
+                <a href="#" target="_blank"> pravila kreativnog natječaja</a>.
+              </p>
+
+              <div class="form__text--white2">
+                <input
+                  type="submit"
+                  id="submit-form"
+                  class="button--custom"
+                  value="POŠALJI"
+                />
+              </div>
+            </div>
           </div>
         </form>
       </div>

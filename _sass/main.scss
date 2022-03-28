@@ -29,6 +29,10 @@
     margin-top: 30px;
   }
 
+  @include for-desktop {
+    margin-top: 30px;
+  }
+
   @include for-fullhd {
     margin-top: 70px;
   }
@@ -82,6 +86,12 @@
       font-size: 30px;
       line-height: 40px;
       margin: 20px 0;
+    }
+
+    @include for-desktop {
+      font-size: 50px;
+      line-height: 70px;
+      margin: 30px 0;
     }
 
     @include for-widescreen {
@@ -141,6 +151,10 @@
       width: 300px;
     }
 
+    @include for-desktop {
+      width: 500px;
+    }
+
     @include for-widescreen {
       width: 700px;
     }
@@ -170,6 +184,12 @@
       margin: 25px 0;
     }
 
+    @include for-desktop {
+      width: 550px;
+      font-size: 20px;
+      margin: 35px 0;
+    }
+
     @include for-widescreen {
       width: 800px;
       font-size: 20px;
@@ -187,17 +207,25 @@
 .logo-fixed {
   position: fixed;
   z-index: 7;
-  top: 189px;
+  bottom: 189px;
   left: 10px;
   height: 100%;
 
   @include for-phone {
-    height: 52%;
+    height: 36%;
     left: 5px;
   }
 
   @include for-tablet {
     height: 66%;
+  }
+
+  @include for-desktop {
+    height: 70%;
+  }
+
+  @include for-widescreen {
+    height: 70%;
   }
 
   @include for-fullhd {
@@ -248,15 +276,21 @@
     }
   }
 
-  &__style {
+  &__style,
+  button {
     color: $cherry-red;
     font-family: $family-secondary;
+    cursor: pointer;
     @include for-phone {
       font-size: 12px;
     }
 
     @include for-tablet {
       font-size: 20px;
+    }
+
+    @include for-desktop {
+      font-size: 30px;
     }
 
     @include for-widescreen {
@@ -295,11 +329,30 @@
   &__style--zdravlje {
     grid-area: zdravlje;
   }
+
+  .content_inside {
+    display: none;
+  }
 }
 
 .form {
   &__wrapper {
     background-color: rgba(0, 0, 0, 0.16);
+    box-shadow: 0 60px 60px 0 rgba(0, 0, 0, 0.16),
+      inset 0 0 0 0 rgba(0, 0, 0, 0.16);
+
+    @include for-phone {
+      margin-bottom: 50px;
+    }
+    @include for-tablet {
+      margin-bottom: 50px;
+    }
+    @include for-desktop {
+      margin-bottom: 50px;
+    }
+    @include for-widescreen {
+      margin-bottom: 100px;
+    }
   }
 
   &__text-box {
@@ -315,14 +368,17 @@
 
     @include for-tablet {
       width: 400px;
+      gap: 10px;
     }
 
     @include for-desktop {
       width: 600px;
+      gap: 10px;
     }
 
     @include for-widescreen {
       width: 700px;
+      gap: 10px;
     }
 
     @include for-fullhd {
@@ -337,22 +393,29 @@
 
     @include for-phone {
       font-size: 25px;
+      padding-top: 10px;
     }
 
     @include for-tablet {
-      font-size: 25px;
+      font-size: 35px;
       line-height: 46px;
       padding-top: 50px;
     }
 
+    @include for-desktop {
+      font-size: 60px;
+      line-height: 86px;
+      padding-top: 100px;
+    }
+
     @include for-widescreen {
-      font-size: 80px;
+      font-size: 60px;
       line-height: 86px;
       padding-top: 100px;
     }
 
     @include for-fullhd {
-      font-size: 173px;
+      font-size: 100px;
       line-height: 120px;
       padding-top: 170px;
     }
@@ -364,12 +427,19 @@
     @include for-phone {
       font-size: 14px;
       line-height: 25px;
+      padding-bottom: 10px;
     }
 
     @include for-tablet {
       font-size: 14px;
       line-height: 25px;
-      padding-top: 20px;
+      padding: 20px 0;
+    }
+
+    @include for-desktop {
+      font-size: 16px;
+      line-height: 30px;
+      padding-top: 80px;
     }
 
     @include for-widescreen {
@@ -383,5 +453,115 @@
       line-height: 40px;
       padding-top: 120px;
     }
+  }
+
+  &__text-box--white {
+    background-color: white;
+    padding: 30px;
+    margin-top: 100px;
+    border: solid 1px $brownish-grey;
+
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include for-phone {
+      width: 100%;
+      grid-template-columns: 1fr;
+    }
+
+    @include for-tablet {
+      width: 100%;
+    }
+
+    @include for-desktop {
+      // width: 600px;
+      width: 100%;
+      margin-top: 70px;
+    }
+
+    @include for-widescreen {
+      // width: 700px;
+      margin-top: 70px;
+      width: 100%;
+    }
+
+    @include for-fullhd {
+      width: 1000px;
+      gap: 50px;
+      margin-top: 200px;
+    }
+
+    a {
+      color: $sky-blue;
+    }
+  }
+
+  textarea {
+    padding: 20px;
+    width: 100%;
+    margin-top: 10px;
+
+    @include for-tablet {
+      margin-left: 10px;
+    }
+
+    @include for-desktop {
+      margin-left: 20px;
+    }
+  }
+
+  input {
+    padding: 20px;
+    width: 100%;
+    margin-top: 10px;
+
+    @include for-phone {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text--white {
+    padding-top: 0;
+    @include for-phone {
+      display: none;
+    }
+  }
+
+  &__text--white2,
+  &__checkbox-wrapper2 {
+    @include for-tablet {
+      display: none;
+    }
+    @include for-desktop {
+      display: none;
+    }
+    @include for-widescreen {
+      display: none;
+    }
+    @include for-fullhd {
+      display: none;
+    }
+    @include for-ultrahd {
+      display: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+  }
+
+  .button--custom {
+    background-color: $cherry-red;
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+  }
+
+  &__checkbox-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
