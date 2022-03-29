@@ -11458,32 +11458,20 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-family: "Montserrat", sans-serif;
 }
 
+section.full {
+  max-width: 100vw;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .header {
   height: 100%;
   background-image: url(../_assets/images/background.png);
   background-size: cover;
   background-position: top;
   position: relative;
-}
-@media (max-width: 767px) {
-  .header {
-    margin-top: 30px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1025px) {
-  .header {
-    margin-top: 30px;
-  }
-}
-@media (min-width: 1025px) {
-  .header {
-    margin-top: 30px;
-  }
-}
-@media (min-width: 1408px) {
-  .header {
-    margin-top: 70px;
-  }
 }
 .header__text-box {
   display: -webkit-box;
@@ -11505,6 +11493,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 @media (min-width: 768px) and (max-width: 1025px) {
   .header__text-box {
     width: 400px;
+    padding: 50px;
+    gap: 20px;
   }
 }
 @media (min-width: 1025px) {
@@ -11690,7 +11680,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 @media (max-width: 767px) {
   .logo-fixed {
-    height: 36%;
+    height: 41%;
     left: 5px;
   }
 }
@@ -11712,6 +11702,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 @media (min-width: 1408px) {
   .logo-fixed {
     height: 75%;
+    bottom: 160px;
   }
 }
 
@@ -11883,27 +11874,29 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 @media (min-width: 768px) and (max-width: 1025px) {
   .form__text-box {
-    width: 400px;
-    gap: 10px;
+    padding: 50px;
   }
 }
 @media (min-width: 1025px) {
   .form__text-box {
-    width: 600px;
     gap: 10px;
+    padding: 50px;
   }
 }
 @media (min-width: 1216px) {
   .form__text-box {
-    width: 700px;
-    gap: 10px;
+    padding: 100px;
   }
 }
 @media (min-width: 1408px) {
   .form__text-box {
-    width: 1000px;
     gap: 50px;
+    padding: 50px;
   }
+}
+.form__div {
+  position: relative;
+  z-index: 10000;
 }
 .form__title {
   color: #707070;
@@ -11918,8 +11911,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 @media (min-width: 768px) and (max-width: 1025px) {
   .form__title {
     font-size: 35px;
-    line-height: 46px;
+    line-height: 25px;
     padding-top: 50px;
+    text-align: center;
   }
 }
 @media (min-width: 1025px) {
@@ -11931,16 +11925,16 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 @media (min-width: 1216px) {
   .form__title {
-    font-size: 60px;
+    font-size: 80px;
     line-height: 86px;
-    padding-top: 100px;
+    padding-top: 72px;
   }
 }
 @media (min-width: 1408px) {
   .form__title {
     font-size: 100px;
     line-height: 120px;
-    padding-top: 170px;
+    padding: 129px;
   }
 }
 .form__text {
@@ -12007,20 +12001,17 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 @media (min-width: 1025px) {
   .form__text-box--white {
     width: 100%;
-    margin-top: 70px;
   }
 }
 @media (min-width: 1216px) {
   .form__text-box--white {
-    margin-top: 70px;
     width: 100%;
   }
 }
 @media (min-width: 1408px) {
   .form__text-box--white {
-    width: 1000px;
+    width: 100%;
     gap: 50px;
-    margin-top: 200px;
   }
 }
 .form__text-box--white a {

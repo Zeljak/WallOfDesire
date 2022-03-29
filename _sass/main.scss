@@ -14,28 +14,38 @@
   font-family: $family-primary;
 }
 
+section.full {
+  max-width: 100vw;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+//VIDEO
+// .videoBlock {
+//   max-width: auto;
+//   align-self: center;
+// }
+// .videoWrapper {
+//   padding-bottom: 56.25%; /* 16:9 */
+//   height: 0;
+// }
+// .videoWrapper video {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+
 .header {
   height: 100%;
   background-image: url(../_assets/images/background.png);
   background-size: cover;
   background-position: top;
   position: relative;
-
-  @include for-phone {
-    margin-top: 30px;
-  }
-
-  @include for-tablet {
-    margin-top: 30px;
-  }
-
-  @include for-desktop {
-    margin-top: 30px;
-  }
-
-  @include for-fullhd {
-    margin-top: 70px;
-  }
 
   &__text-box {
     display: flex;
@@ -48,6 +58,8 @@
 
     @include for-tablet {
       width: 400px;
+      padding: 50px;
+      gap: 20px;
     }
 
     @include for-desktop {
@@ -212,7 +224,7 @@
   height: 100%;
 
   @include for-phone {
-    height: 36%;
+    height: 41%;
     left: 5px;
   }
 
@@ -230,6 +242,7 @@
 
   @include for-fullhd {
     height: 75%;
+    bottom: 160px;
   }
 }
 
@@ -370,24 +383,30 @@
     }
 
     @include for-tablet {
-      width: 400px;
-      gap: 10px;
+      padding: 50px;
     }
 
     @include for-desktop {
-      width: 600px;
+      // width: 600px;
       gap: 10px;
+      padding: 50px;
     }
 
     @include for-widescreen {
-      width: 700px;
-      gap: 10px;
+      // width: 700px;
+      padding: 100px;
     }
 
     @include for-fullhd {
-      width: 1000px;
+      // width: 1000px;
       gap: 50px;
+      padding: 50px;
     }
+  }
+
+  &__div {
+    position: relative;
+    z-index: 10000;
   }
 
   &__title {
@@ -401,8 +420,9 @@
 
     @include for-tablet {
       font-size: 35px;
-      line-height: 46px;
+      line-height: 25px;
       padding-top: 50px;
+      text-align: center;
     }
 
     @include for-desktop {
@@ -412,15 +432,15 @@
     }
 
     @include for-widescreen {
-      font-size: 60px;
+      font-size: 80px;
       line-height: 86px;
-      padding-top: 100px;
+      padding-top: 72px;
     }
 
     @include for-fullhd {
       font-size: 100px;
       line-height: 120px;
-      padding-top: 170px;
+      padding: 129px;
     }
   }
 
@@ -480,19 +500,16 @@
     @include for-desktop {
       // width: 600px;
       width: 100%;
-      margin-top: 70px;
     }
 
     @include for-widescreen {
       // width: 700px;
-      margin-top: 70px;
       width: 100%;
     }
 
     @include for-fullhd {
-      width: 1000px;
+      width: 100%;
       gap: 50px;
-      margin-top: 200px;
     }
 
     a {
