@@ -57,6 +57,10 @@
 
       gtag("config", "UA-267402-38", { anonymize_ip: true });
     </script>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="lib/jquery.serialize-object.min.js"></script>
   </head>
 
   <body>
@@ -112,7 +116,7 @@
         <div class="container links">
           <div class="links__wrapper">
             <a class="links__style links__style--moda" href="#moda">moda</a>
-            <a class="links__style links__style--beuty" href="#beauty"
+            <a class="links__style links__style--beauty" href="#beauty"
               >beauty</a
             >
             <a class="links__style links__style--hrana" href="#hrana">hrana</a>
@@ -137,8 +141,8 @@
       </section>
 
       <!-- MODA -->
-      <div id="moda" class="form form__wrapper">
-        <form action="">
+      <div id="moda" class="form form__wrapper is-hidden">
+        <form id="anketaModa">
           <div class="form__text-box">
             <h2 class="form__title">MODA</h2>
             <p class="form__text">
@@ -150,20 +154,21 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-moda"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
               />
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_moda1" id="pravila_moda1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_moda1"
+                      id="pravila-moda-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -184,16 +189,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-moda-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="moda_zelja"
-                id="moda_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -204,12 +210,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_moda2"
-                    name="pravila_moda2"
+                    id="pravila-moda-mobile"
+                    name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_moda2" id="pravila_moda2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -219,22 +225,38 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="moda"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-moda-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-moda is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-moda" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-moda" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
 
       <!-- BEAUTY -->
-      <div id="beauty" class="form form__wrapper content_inside">
-        <form action="">
+      <div id="beauty" class="form form__wrapper content_inside  is-hidden">
+        <form id="anketaBeauty">
           <div class="form__text-box">
             <h2 class="form__title">BEAUTY</h2>
             <p class="form__text">
@@ -245,10 +267,11 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-beauty"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
@@ -256,10 +279,10 @@
 
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_beauty1" id="pravila_beauty1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_beauty1"
+                      id="pravila-beauty-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -279,16 +302,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-beauty-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="beauty_zelja"
-                id="beauty_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -299,12 +323,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_beauty2"
+                    id="pravila-beauty-mobile"
                     name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_beauty2" id="pravila_beauty2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -314,22 +338,38 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="beauty"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-beauty-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-beauty is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-beauty" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-beauty" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
 
       <!-- HRANA -->
-      <div id="hrana" class="form form__wrapper content_inside">
-        <form action="">
+      <div id="hrana" class="form form__wrapper content_inside  is-hidden">
+        <form id="anketaHrana">
           <div class="form__text-box">
             <h2 class="form__title">HRANA</h2>
             <p class="form__text">
@@ -340,10 +380,11 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-hrana"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
@@ -351,10 +392,10 @@
 
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_hrana1" id="pravila_hrana1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_hrana1"
+                      id="pravila-hrana-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -374,16 +415,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-hrana-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="hrana_zelja"
-                id="hrana_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -394,12 +436,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_hrana2"
-                    name="pravila_hrana2"
+                    id="pravila-hrana-mobile"
+                    name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_hrana2" id="pravila_hrana2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -409,22 +451,38 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="hrana"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-hrana-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-hrana is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-hrana" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-hrana" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
 
       <!-- SPORT -->
-      <div id="sport" class="form form__wrapper content_inside">
-        <form action="">
+      <div id="sport" class="form form__wrapper content_inside  is-hidden">
+        <form id="anketaSport">
           <div class="form__text-box">
             <h2 class="form__title">SPORT</h2>
             <p class="form__text">
@@ -435,10 +493,11 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-sport"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
@@ -446,10 +505,10 @@
 
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_sport1" id="pravila_sport1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_sport1"
+                      id="pravila-sport-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -469,16 +528,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-sport-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="sport_zelja"
-                id="sport_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -489,12 +549,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_sport2"
+                    id="pravila-sport-mobile"
                     name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_sport2" id="pravila_sport2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -504,22 +564,38 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="sport"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-sport-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-sport is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-sport" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-sport" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
 
       <!-- TEHNOLOGIJA -->
-      <div id="tech" class="form form__wrapper">
-        <form action="">
+      <div id="tech" class="form form__wrapper is-hidden">
+        <form id="anketaTech">
           <div class="form__text-box">
             <h2 class="form__title">TEHNOLOGIJA</h2>
             <p class="form__text">
@@ -530,21 +606,21 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-tech"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
               />
-
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_tech1" id="pravila_tech1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_tech1"
+                      id="pravila-tech-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -565,16 +641,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-tech-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="tech_zelja"
-                id="tech_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -585,12 +662,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_tech2"
+                    id="pravila-tech-mobile"
                     name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_tech2" id="pravila_tech2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -600,22 +677,38 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="tech"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-tech-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-tech is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-tech" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-tech" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
 
       <!-- PUTOVANJA -->
-      <div id="putovanja" class="form form__wrapper">
-        <form action="">
+      <div id="putovanja" class="form form__wrapper is-hidden">
+        <form id="anketaPutovanja">
           <div class="form__text-box">
             <h2 class="form__title">PUTOVANJA</h2>
             <p class="form__text">
@@ -628,21 +721,21 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-putovanja"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
               />
-
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_putovanja1" id="pravila_putovanja1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_putovanja1"
+                      id="pravila-putovanja-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -663,16 +756,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-putovanja-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="putovanja_zelja"
-                id="putovanja_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -683,12 +777,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_putovanja2"
+                    id="pravila-putovanja-mobile"
                     name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_putovanja2" id="pravila_putovanja2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -698,22 +792,38 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="putovanja"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-putovanja-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-putovanja is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-putovanja" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-putovanja" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
 
       <!-- TRETMANI -->
-      <div id="tretmani" class="form form__wrapper content_inside">
-        <form action="">
+      <div id="tretmani" class="form form__wrapper content_inside  is-hidden">
+        <form id="anketaTretmani">
           <div class="form__text-box">
             <h2 class="form__title">TRETMANI</h2>
             <p class="form__text">
@@ -724,21 +834,21 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-tretmani"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
               />
-
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_tretmani1" id="pravila_tretmani1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_tretmani1"
+                      id="pravila-tretmani-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -759,16 +869,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-tretmani-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="tretmani_zelja"
-                id="tretmani_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -779,12 +890,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_tretmani2"
+                    id="pravila-tretmani-mobile"
                     name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_tretmani2" id="pravila_tretmani2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -794,22 +905,38 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="tretmani"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-tretmani-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-tretmani is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-tretmani" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-tretmani" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
 
       <!-- SHOPPING -->
-      <div id="shopping" class="form form__wrapper content_inside">
-        <form action="">
+      <div id="shopping" class="form form__wrapper content_inside is-hidden">
+        <form id="anketaShopping">
           <div class="form__text-box">
             <h2 class="form__title">SHOPPING</h2>
             <p class="form__text">
@@ -821,21 +948,21 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-shopping"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
               />
-
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_shopping1" id="pravila_shopping1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_shopping1"
+                      id="pravila-shopping-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -856,16 +983,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-shopping-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="shopping_zelja"
-                id="shopping_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -876,12 +1004,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_shopping2"
+                    id="pravila-shopping-mobile"
                     name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_shopping2" id="pravila_shopping2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -891,22 +1019,38 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="shopping"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-shopping-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-shopping is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-shopping" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-shopping" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
 
       <!-- ZDRAVLJE -->
-      <div id="zdravlje" class="form form__wrapper content_inside">
-        <form action="">
+      <div id="zdravlje" class="form form__wrapper content_inside is-hidden">
+        <form id="anketaZdravlje">
           <div class="form__text-box">
             <h2 class="form__title">ZDRAVLJE</h2>
             <p class="form__text">
@@ -917,21 +1061,21 @@
           </div>
 
           <div class="form__text-box--white">
+            <!-- Desktop -->
             <div class="form__div">
               <input
                 type="text"
-                id="email"
+                id="email-zdravlje"
                 name="email"
                 class="form__email"
                 placeholder="Upiši svoj e-mail"
               />
-
               <div class="form__checkbox-wrapper">
                 <div class="form__checkbox">
-                  <label for="pravila_zdravlje1" id="pravila_zdravlje1">
+                  <label for="pravila">
                     <input
                       type="checkbox"
-                      id="pravila_zdravlje1"
+                      id="pravila-zdravlje-desktop"
                       name="pravila"
                       value="prihvacam"
                       class="form__text--white form__text--white-checkbox"
@@ -952,16 +1096,17 @@
               <div class="form__text--white">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-zdravlje-desktop"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
+
+            <!-- Mobile -->
             <div class="form__div">
               <textarea
-                name="zdravlje_zelja"
-                id="zdravlje_zelja"
+                name="zelja"
                 cols="30"
                 rows="20"
                 maxlength="200"
@@ -972,12 +1117,12 @@
                 <div>
                   <input
                     type="checkbox"
-                    id="pravila_zdravlje2"
+                    id="pravila-zdravlje-mobile"
                     name="pravila"
                     value="prihvacam"
                     class="form__text--white2"
                   />
-                  <label for="pravila_zdravlje2" id="pravila_zdravlje2"></label>
+                  <label for="pravila"></label>
                 </div>
                 <p class="form__text form__text--white2">
                   Pročitao/la sam pravilnik kreativnog natječaja i GDPR-a, te ih
@@ -987,16 +1132,32 @@
                 </p>
               </div>
 
+              <div class="is-hidden">
+                <input
+                  type="text"
+                  name="kategorija"
+                  value="zdravlje"
+                />
+              </div>
+
               <div class="form__text--white2">
                 <input
                   type="submit"
-                  id="submit-form"
+                  id="submit-form-zdravlje-mobile"
                   class="button--custom"
                   value="POŠALJI"
                 />
               </div>
             </div>
           </div>
+
+          <!-- Messages and loading -->
+          <div class="is-flex is-justify-content-center">
+            <div class="loading-indicator loading-indicator-zdravlje is-hidden lds-ripple"><div></div><div></div><div></div><div></div></div>
+          </div>
+          <h6 class="is-hidden has-text-centered error-msg error-msg-zdravlje" class="">Morate prihvatiti pravila privatnosti i upisati email adresu!</h6>
+          <h6 class="is-hidden has-text-centered response-msg response-msg-zdravlje" class="">Vaša prijava je spremljena. Hvala na sudjelovanju!</h6>
+
         </form>
       </div>
     </main>
@@ -1012,11 +1173,12 @@
 	    </div>
     </footer> 
 
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script src="lib/jquery.serialize-object.min.js"></script> -->
     <script type="text/javascript" src="lib/main.js"></script>
   </body>
 </html>

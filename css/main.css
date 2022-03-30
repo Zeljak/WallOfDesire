@@ -11716,51 +11716,54 @@ section.full {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 5px 5px;
       grid-template-areas: ". moda ." "beauty  . hrana" ". sport  tech" ". putovanja ." "tretmani  . ." "shopping . ." ". zdravlje  .";
-  max-width: 900px;
 }
 @media (max-width: 767px) {
   .links__wrapper {
-    width: 200px;
+    width: 300px;
     padding-left: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
   }
 }
 @media (min-width: 768px) and (max-width: 1025px) {
   .links__wrapper {
-    width: 400px;
-    margin-bottom: 25px;
+    width: 500px;
+    margin-bottom: 75px;
   }
 }
 @media (min-width: 1025px) {
   .links__wrapper {
-    width: 600px;
+    margin-bottom: 100px;
   }
 }
 @media (min-width: 1216px) {
   .links__wrapper {
-    width: 700px;
-    margin-bottom: 35px;
+    margin-bottom: 100px;
   }
 }
 @media (min-width: 1408px) {
   .links__wrapper {
-    width: 900px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
   }
 }
 .links__style {
+  background: url("../_assets/images/ciglica.jpg") no-repeat center center/cover;
   color: #e60c22;
   font-family: "Times New Roman", Times, serif;
   cursor: pointer;
+  padding: 0 10%;
+  position: relative;
+  -webkit-transition: scale, 1s;
+  transition: scale, 1s;
+  z-index: 1;
 }
 @media (max-width: 767px) {
   .links__style {
-    font-size: 12px;
+    font-size: 18px;
   }
 }
 @media (min-width: 768px) and (max-width: 1025px) {
   .links__style {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 @media (min-width: 1025px) {
@@ -11775,12 +11778,35 @@ section.full {
 }
 @media (min-width: 1408px) {
   .links__style {
-    font-size: 80px;
+    font-size: 70px;
   }
 }
+.links__style::after {
+  background: url("../_assets/images/sjena.png") no-repeat center center/cover;
+  border-radius: 0 0 50% 50%;
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  z-index: 2;
+}
+.links__style:nth-child(3), .links__style:nth-child(6) {
+  position: relative;
+  left: -50%;
+}
+.links__style:nth-child(8) {
+  position: relative;
+  left: 50%;
+}
 .links__style:hover {
+  color: #e60c22;
   -webkit-transform: scale(2);
           transform: scale(2);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  z-index: 3;
 }
 .links__style--moda {
   -ms-grid-row: 1;
@@ -12162,4 +12188,67 @@ section.full {
   .footer img {
     width: 20%;
   }
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid white;
+  opacity: 1;
+  border-radius: 50%;
+  -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+          animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+@-webkit-keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+.loading-indicator, .error-msg, .response-msg {
+  margin-top: 40px;
+}
+
+.error-msg, .response-msg {
+  color: #e60c22;
+  font-weight: bold;
 }
