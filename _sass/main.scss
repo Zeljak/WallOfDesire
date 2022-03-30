@@ -226,18 +226,22 @@ section.full {
   @include for-phone {
     height: 41%;
     left: 5px;
+    bottom: 5px;
   }
 
   @include for-tablet {
     height: 66%;
+    bottom: 145px;
   }
 
   @include for-desktop {
     height: 70%;
+    bottom: 145px;
   }
 
   @include for-widescreen {
     height: 70%;
+    bottom: 145px;
   }
 
   @include for-fullhd {
@@ -291,7 +295,8 @@ section.full {
   }
 
   &__style {
-    background: url('../_assets/images/ciglica.jpg') no-repeat center center / cover;
+    background: url("../_assets/images/ciglica.jpg") no-repeat center center /
+      cover;
     color: $cherry-red;
     font-family: $family-secondary;
     cursor: pointer;
@@ -321,9 +326,10 @@ section.full {
     }
 
     &::after {
-      background: url('../_assets/images/sjena.png') no-repeat center center / cover;
+      background: url("../_assets/images/sjena.png") no-repeat center center /
+        cover;
       border-radius: 0 0 50% 50%;
-      content: '';
+      content: "";
       width: 100%;
       height: 50%;
       position: absolute;
@@ -332,7 +338,8 @@ section.full {
       z-index: 2;
     }
 
-    &:nth-child(3), &:nth-child(6) {
+    &:nth-child(3),
+    &:nth-child(6) {
       position: relative;
       left: -50%;
     }
@@ -708,11 +715,14 @@ section.full {
   }
 }
 
-.loading-indicator, .error-msg, .response-msg {
+.loading-indicator,
+.error-msg,
+.response-msg {
   margin-top: 40px;
 }
 
-.error-msg, .response-msg {
+.error-msg,
+.response-msg {
   color: $cherry-red;
   font-weight: bold;
 }
